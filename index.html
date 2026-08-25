@@ -1,0 +1,5760 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NoahX Japan | Profile & Cosplayer</title>
+
+
+    <style>
+
+        /* =================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =================================
+           BASIC
+        ================================= */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Helvetica Neue",
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #a855f7,
+                    #d8b4fe
+                );
+
+            min-height: 100vh;
+
+            color: #222;
+
+        }
+
+
+        /* =================================
+           HEADER
+        ================================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            background:
+                rgba(0, 0, 0, 0.92);
+
+            color: #fff;
+
+            padding: 20px 6%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            z-index: 1000;
+
+        }
+
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        /* =================================
+           MENU BUTTON
+        ================================= */
+
+        .menu-button {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 5px;
+
+            background: transparent;
+
+            border: 0;
+
+            cursor: pointer;
+
+        }
+
+
+        .menu-button span {
+
+            width: 25px;
+            height: 2px;
+
+            display: block;
+
+            background: #fff;
+
+            border-radius: 2px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .menu-button.active span:nth-child(1) {
+
+            transform:
+                translateY(7px)
+                rotate(45deg);
+
+        }
+
+
+        .menu-button.active span:nth-child(2) {
+
+            opacity: 0;
+
+        }
+
+
+        .menu-button.active span:nth-child(3) {
+
+            transform:
+                translateY(-7px)
+                rotate(-45deg);
+
+        }
+
+
+        /* =================================
+           NAVIGATION
+        ================================= */
+
+        nav {
+
+            position: absolute;
+
+            top: 72px;
+
+            right: 6%;
+
+            width: 180px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            background:
+                rgba(0, 0, 0, 0.96);
+
+            border-radius: 10px;
+
+            padding: 8px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.25);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(-10px);
+
+            transition: 0.25s;
+
+        }
+
+
+        nav.open {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        nav a {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            padding: 14px 15px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+        }
+
+
+        nav a:hover {
+
+            background:
+                rgba(255, 255, 255, 0.12);
+
+        }
+
+
+        /* =================================
+           PAGE
+        ================================= */
+
+        .page {
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                35px
+                20px
+                70px;
+
+        }
+
+
+        .talent-profile {
+
+            max-width: 520px;
+
+            margin: auto;
+
+        }
+
+
+        .hidden {
+
+            display: none !important;
+
+        }
+
+
+        /* =================================
+           TITLES
+        ================================= */
+
+        .cosplayer-title {
+
+            color: #fff;
+
+            text-align: center;
+
+            margin:
+                70px
+                0
+                40px;
+
+        }
+
+
+        .cosplayer-title h1 {
+
+            font-size: 40px;
+
+            letter-spacing: 5px;
+
+        }
+
+
+        .cosplayer-title p {
+
+            margin-top: 10px;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+
+        }
+
+
+        .section-title {
+
+            color: #fff;
+
+            text-align: center;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            margin:
+                28px
+                0
+                11px;
+
+        }
+
+
+        /* =================================
+           TALENT LIST
+        ================================= */
+
+        .talent-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .talent-card {
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background: #fff;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.18);
+
+            transition: 0.3s;
+
+        }
+
+
+        .talent-card:hover {
+
+            transform:
+                translateY(-7px);
+
+        }
+
+
+        .talent-photo {
+
+            width: 100%;
+
+            height: 380px;
+
+            object-fit: cover;
+
+            display: block;
+
+            background: #eee;
+
+        }
+
+
+        .talent-info {
+
+            padding: 25px;
+
+        }
+
+
+        .talent-name {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .talent-category {
+
+            color: #888;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .profile-button,
+        .post-jump-button,
+        .back,
+        .show-all-posts {
+
+            border: 0;
+
+            background: #111;
+
+            color: #fff;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+        }
+
+
+        .profile-button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+        }
+
+
+        .profile-button:hover,
+        .post-jump-button:hover,
+        .back:hover,
+        .show-all-posts:hover {
+
+            background: #7540e8;
+
+        }
+
+
+        /* =================================
+           PROFILE
+        ================================= */
+
+        .profile {
+
+            text-align: center;
+
+            color: #fff;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .profile-icon {
+
+            width: 105px;
+            height: 105px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            border: 4px solid #fff;
+
+        }
+
+
+        .profile-icon img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .profile-name {
+
+            margin-top: 14px;
+
+            font-size: 26px;
+
+        }
+
+
+        .profile-id {
+
+            margin-top: 5px;
+
+            font-size: 12px;
+
+            opacity: 0.85;
+
+        }
+
+
+        .profile-text {
+
+            margin-top: 12px;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================
+           SOCIAL
+        ================================= */
+
+        .social {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .social a {
+
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #fff;
+
+        }
+
+
+        .social img {
+
+            width: 28px;
+            height: 28px;
+
+            object-fit: contain;
+
+        }
+
+
+        /* =================================
+           COMMON CARD
+        ================================= */
+
+        .card,
+        .rules,
+        .latest-item,
+        .calendar-card,
+        .empty-message {
+
+            background:
+                rgba(255, 255, 255, 0.97);
+
+            border-radius: 12px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 6px 20px
+                rgba(0, 0, 0, 0.12);
+
+        }
+
+
+        .card-title {
+
+            text-align: center;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .profile-row {
+
+            display: flex;
+
+            padding: 11px 0;
+
+            border-bottom:
+                1px solid #eee;
+
+            font-size: 12px;
+
+        }
+
+
+        .profile-label {
+
+            width: 110px;
+
+            flex-shrink: 0;
+
+            color: #888;
+
+        }
+
+
+        .profile-value {
+
+            flex: 1;
+
+            line-height: 1.7;
+
+            word-break: break-word;
+
+        }
+
+
+        /* =================================
+           LINKS
+        ================================= */
+
+        .links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 9px;
+
+        }
+
+
+        .link,
+        .link-disabled {
+
+            position: relative;
+
+            min-height: 58px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                12px
+                45px;
+
+            background: #fff;
+
+            color: #222;
+
+            text-decoration: none;
+
+            border-radius: 9px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+        .link-icon {
+
+            position: absolute;
+
+            left: 10px;
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 8px;
+
+            background: #f3f3f3;
+
+        }
+
+
+        .link-icon img {
+
+            width: 27px;
+            height: 27px;
+
+            object-fit: contain;
+
+        }
+
+
+        .link-disabled {
+
+            color: #888;
+
+        }
+
+
+        .update-date {
+
+            margin-top: 8px;
+
+            font-size: 10px;
+
+            color: #999;
+
+            text-align: right;
+
+        }
+
+
+        /* =================================
+           LATEST POSTS
+        ================================= */
+
+        .latest-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+        }
+
+
+        .latest-item {
+
+            padding: 16px;
+
+        }
+
+
+        .latest-date {
+
+            display: inline-block;
+
+            font-size: 10px;
+
+            color: #fff;
+
+            background: #7c3aed;
+
+            border-radius: 20px;
+
+            padding: 4px 10px;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .latest-title {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .latest-text {
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            color: #555;
+
+        }
+
+
+        .latest-profile-button {
+
+            margin-top: 12px;
+
+            width: 100%;
+
+            padding: 11px;
+
+            border: 0;
+
+            border-radius: 30px;
+
+            background: #111;
+
+            color: #fff;
+
+            cursor: pointer;
+
+        }
+
+
+        .empty-message {
+
+            text-align: center;
+
+            font-size: 12px;
+
+            color: #888;
+
+        }
+
+
+        /* =================================
+           CALENDAR
+        ================================= */
+
+        .calendar-wrapper {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+
+        }
+
+
+        .calendar-switcher {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .calendar-switch-button {
+
+            width: 44px;
+            height: 44px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #111;
+
+            color: #fff;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+        }
+
+
+        .calendar-switch-button:disabled {
+
+            opacity: 0.3;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .calendar-current-month {
+
+            flex: 1;
+
+            text-align: center;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+        }
+
+
+        .calendar-week,
+        .calendar-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap: 4px;
+
+        }
+
+
+        .calendar-week {
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .calendar-week div {
+
+            text-align: center;
+
+            font-size: 10px;
+
+            color: #888;
+
+        }
+
+
+        .calendar-day {
+
+            position: relative;
+
+            aspect-ratio: 1;
+
+            border: 0;
+
+            border-radius: 8px;
+
+            background: #f7f7f7;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 11px;
+
+        }
+
+
+        .calendar-day.empty {
+
+            background: transparent;
+
+        }
+
+
+        .calendar-day.has-post {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #a855f7
+                );
+
+            color: #fff;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+
+        .calendar-post-count {
+
+            position: absolute;
+
+            right: 3px;
+            bottom: 3px;
+
+            min-width: 16px;
+            height: 16px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #fff;
+
+            color: #7c3aed;
+
+            font-size: 8px;
+
+        }
+
+
+        /* =================================
+           POST ARCHIVE
+        ================================= */
+
+        .post-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 24px;
+
+        }
+
+
+        .post-filter-bar {
+
+            background:
+                rgba(255, 255, 255, 0.15);
+
+            border-radius: 12px;
+
+            padding: 12px;
+
+            color: #fff;
+
+            text-align: center;
+
+            font-size: 12px;
+
+        }
+
+
+        .show-all-posts {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border-radius: 30px;
+
+            margin-top: 8px;
+
+        }
+
+
+        .post-date-heading {
+
+            color: #fff;
+
+            font-size: 16px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .post-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+
+        }
+
+
+        .post-card {
+
+            background: #fff;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .post-image {
+
+            width: 100%;
+
+            aspect-ratio: 4 / 5;
+
+            object-fit: cover;
+
+            background: #eee;
+
+        }
+
+
+        .post-content {
+
+            padding: 13px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+            flex: 1;
+
+        }
+
+
+        .post-number {
+
+            font-size: 10px;
+
+            color: #7c3aed;
+
+            font-weight: bold;
+
+        }
+
+
+        .post-title {
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+        }
+
+
+        .post-text {
+
+            font-size: 11px;
+
+            color: #666;
+
+            line-height: 1.7;
+
+        }
+
+
+        .post-jump-button {
+
+            margin-top: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 42px;
+
+            padding: 10px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =================================
+           RULES
+        ================================= */
+
+        .rules h2 {
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .rule {
+
+            padding: 15px 0;
+
+            border-bottom:
+                1px solid #eee;
+
+        }
+
+
+        .rule-title {
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+
+            color: #6d28d9;
+
+        }
+
+
+        .rule-text {
+
+            font-size: 11px;
+
+            line-height: 1.9;
+
+            color: #555;
+
+        }
+
+
+        .warning {
+
+            margin-top: 16px;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            background: #fff1f2;
+
+            color: #be123c;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================
+           MAIN PHOTO
+        ================================= */
+
+        .main-photo {
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            background: #fff;
+
+        }
+
+
+        .main-photo img {
+
+            width: 100%;
+
+            display: block;
+
+            aspect-ratio: 3 / 4;
+
+            object-fit: cover;
+
+        }
+
+
+        /* =================================
+           BACK
+        ================================= */
+
+        .back {
+
+            display: block;
+
+            width: 100%;
+
+            margin-top: 18px;
+
+            padding: 14px;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+
+        }
+
+
+        footer {
+
+            color: #fff;
+
+            text-align: center;
+
+            font-size: 10px;
+
+            opacity: 0.7;
+
+            margin-top: 40px;
+
+            padding-bottom: 20px;
+
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding:
+                    17px
+                    20px;
+
+            }
+
+
+            .logo {
+
+                font-size: 16px;
+
+            }
+
+
+            nav {
+
+                top: 62px;
+
+                right: 20px;
+
+                width: 170px;
+
+            }
+
+
+            .page {
+
+                padding:
+                    25px
+                    15px
+                    50px;
+
+            }
+
+
+            .talent-list,
+            .post-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .talent-photo {
+
+                height: 430px;
+
+            }
+
+
+            .cosplayer-title h1 {
+
+                font-size: 30px;
+
+            }
+
+
+            .profile-row {
+
+                flex-direction: column;
+
+                gap: 5px;
+
+            }
+
+
+            .profile-label {
+
+                width: auto;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+
+    <header>
+
+        <div class="logo">
+            NoahX Japan
+        </div>
+
+
+        <button
+            type="button"
+            class="menu-button"
+            aria-label="メニュー"
+            onclick="toggleMenu()"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <nav id="menu">
+
+            <a href="#staff">
+                STAFF
+            </a>
+
+            <a href="#latestPosts">
+                最新投稿
+            </a>
+
+            <a href="#cosplayer">
+                Cosplay一覧
+            </a>
+
+            <a href="#rules">
+                投稿者規定
+            </a>
+
+            <a href="./SHOP-site/index.html">
+                Shop
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main
+        class="page"
+        id="mainPage"
+    >
+
+
+        <!-- STAFF -->
+
+        <section id="staff">
+
+            <div class="cosplayer-title">
+
+                <h1>STAFF</h1>
+
+                <p>
+                    NoahX Japan 運営・スタッフ
+                </p>
+
+            </div>
+
+
+            <div
+                class="talent-list"
+                id="staffList"
+            ></div>
+
+        </section>
+
+
+        <!-- LATEST POSTS -->
+
+        <section id="latestPosts">
+
+            <div class="cosplayer-title">
+
+                <h1>
+                    LATEST POSTS
+                </h1>
+
+                <p>
+                    過去7日以内の最新投稿
+                </p>
+
+            </div>
+
+
+            <div
+                class="latest-list"
+                id="latestPostList"
+            ></div>
+
+        </section>
+
+
+        <!-- COSPLAYER -->
+
+        <section id="cosplayer">
+
+            <div class="cosplayer-title">
+
+                <h1>
+                    コスプレイヤー一覧
+                </h1>
+
+                <p>
+                    使用させて頂いている、コスプレイヤー様
+                </p>
+
+            </div>
+
+
+            <div
+                class="talent-list"
+                id="talentList"
+            ></div>
+
+        </section>
+
+
+        <!-- RULES -->
+
+        <div
+            class="section-title"
+            id="rules"
+        >
+            POSTING RULES
+        </div>
+
+
+        <div class="rules">
+
+            <h2>
+                投稿者規定
+            </h2>
+
+
+            <div class="rule">
+
+                <div class="rule-title">
+                    01　年齢について
+                </div>
+
+                <div class="rule-text">
+
+                    年齢が18歳以上（成人している方）の投稿をしています。
+
+                    <br><br>
+
+                    ※18歳以下の方の依頼はお断りしています。
+
+                    <br><br>
+
+                    年齢に関しては、Fantia、X等のステータスメッセージから確認させていただいています。
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-title">
+                    02　投稿時について
+                </div>
+
+                <div class="rule-text">
+
+                    ハッシュタグ、もしくはメンション等をお願いします。
+
+                    <br><br>
+
+                    基本的に「X IB:000xxx」のような記載をしております。
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-title">
+                    03　画像の使用について
+                </div>
+
+                <div class="rule-text">
+
+                    画像の使用に関しましては、都度ご相談します。
+
+                    <br><br>
+
+                    ※一部の方は、条件付き利用をしています。
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-title">
+                    04　削除依頼について
+                </div>
+
+                <div class="rule-text">
+
+                    X（ID: noa0230）
+
+                    <br>
+
+                    TikTok（ID: noah._.0223）
+
+                    <br><br>
+
+                    またはメールにて受け付けております。
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-title">
+                    05　性的コンテンツについて
+                </div>
+
+                <div class="rule-text">
+
+                    性的コンテンツを含む作品に関しては、モザイク処理を提案させていただくことがございます。
+
+                    <br><br>
+
+                    TikTokアカウントがBanされる可能性があるためです。
+
+                </div>
+
+            </div>
+
+
+            <div class="warning">
+
+                ⚠️ 私が投稿している画像は、本人許可を得ています。
+
+                <br><br>
+
+                無断転載をされると二度と利用できなくなる可能性がありますので、おやめ下さい。
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =================================
+         PROFILE PAGE
+    ================================= -->
+
+    <main
+        class="page hidden"
+        id="talentProfilePage"
+    >
+
+        <div class="talent-profile">
+
+
+            <section class="profile">
+
+                <div class="profile-icon">
+
+                    <img
+                        id="talentIcon"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+                <h1
+                    class="profile-name"
+                    id="talentProfileName"
+                ></h1>
+
+
+                <p
+                    class="profile-id"
+                    id="talentTag"
+                ></p>
+
+
+                <p
+                    class="profile-text"
+                    id="talentDescription"
+                ></p>
+
+
+                <div
+                    class="social"
+                    id="talentSocial"
+                ></div>
+
+            </section>
+
+
+            <div class="main-photo">
+
+                <img
+                    id="talentMainImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="section-title">
+                SNS / LINKS
+            </div>
+
+
+            <div
+                class="links"
+                id="talentLinks"
+            ></div>
+
+
+            <div class="section-title">
+                PERSONAL PROFILE
+            </div>
+
+
+            <div class="card">
+
+                <div
+                    class="card-title"
+                    id="talentDetailTitle"
+                ></div>
+
+
+                <div class="profile-row">
+
+                    <div class="profile-label">
+                        名前
+                    </div>
+
+                    <div
+                        class="profile-value"
+                        id="talentDetailName"
+                    ></div>
+
+                </div>
+
+
+                <div
+                    id="talentDetailRows"
+                ></div>
+
+
+                <div
+                    class="update-date"
+                    id="talentUpdatedAt"
+                ></div>
+
+            </div>
+
+
+            <div class="section-title">
+                POST CALENDAR
+            </div>
+
+
+            <div
+                class="calendar-wrapper"
+                id="talentPostCalendar"
+            ></div>
+
+
+            <div class="section-title">
+                POST ARCHIVE
+            </div>
+
+
+            <div
+                id="postFilterBar"
+            ></div>
+
+
+            <div
+                class="post-list"
+                id="talentPostList"
+            ></div>
+
+
+            <div class="section-title">
+                LATEST NEWS
+            </div>
+
+
+            <div
+                class="latest-list"
+                id="talentLatestNews"
+            ></div>
+
+
+            <p
+                class="profile-text"
+                style="
+                    color:white;
+                    font-size:10px;
+                    text-align:center;
+                    margin-top:20px;
+                "
+            >
+                ※写真・画像の無断転載はご遠慮ください。
+            </p>
+
+
+            <button
+                type="button"
+                class="back"
+                onclick="showTalentList()"
+            >
+                ← 一覧へ戻る
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        © 2026 NoahX JP
+    </footer>
+
+
+    <script>
+
+        /* =================================
+           ELEMENTS
+        ================================= */
+
+        const $ =
+            id =>
+                document.getElementById(id);
+
+
+        const mainPage =
+            $("mainPage");
+
+
+        const talentProfilePage =
+            $("talentProfilePage");
+
+
+        const menu =
+            $("menu");
+
+
+        const menuButton =
+            document.querySelector(".menu-button");
+
+
+        const staffList =
+            $("staffList");
+
+
+        const talentList =
+            $("talentList");
+
+
+        const latestPostList =
+            $("latestPostList");
+
+
+        const talentIcon =
+            $("talentIcon");
+
+
+        const talentMainImage =
+            $("talentMainImage");
+
+
+        const talentProfileName =
+            $("talentProfileName");
+
+
+        const talentTag =
+            $("talentTag");
+
+
+        const talentDescription =
+            $("talentDescription");
+
+
+        const talentSocial =
+            $("talentSocial");
+
+
+        const talentLinks =
+            $("talentLinks");
+
+
+        const talentDetailTitle =
+            $("talentDetailTitle");
+
+
+        const talentDetailName =
+            $("talentDetailName");
+
+
+        const talentDetailRows =
+            $("talentDetailRows");
+
+
+        const talentUpdatedAt =
+            $("talentUpdatedAt");
+
+
+        const talentPostCalendar =
+            $("talentPostCalendar");
+
+
+        const talentPostList =
+            $("talentPostList");
+
+
+        const talentLatestNews =
+            $("talentLatestNews");
+
+
+        const postFilterBar =
+            $("postFilterBar");
+
+
+        /* =================================
+           IMAGE FALLBACK
+        ================================= */
+
+        const EXTENSIONS = [
+            "jpeg",
+            "jpg",
+            "png",
+            "webp"
+        ];
+
+
+        function imageCandidates(base) {
+
+            return EXTENSIONS.map(
+                ext =>
+                    `${base}.${ext}`
+            );
+
+        }
+
+
+        function setImageWithFallback(
+            img,
+            base
+        ) {
+
+            const list =
+                imageCandidates(base);
+
+
+            let index = 0;
+
+
+            img.onerror = () => {
+
+                index++;
+
+
+                if (index < list.length) {
+
+                    img.src =
+                        list[index];
+
+                } else {
+
+                    img.onerror = null;
+
+                    img.alt =
+                        "画像準備中";
+
+                    img.style.opacity =
+                        "0.35";
+
+                }
+
+            };
+
+
+            img.src =
+                list[0];
+
+        }
+
+
+        const getImageBase =
+            (type, id) =>
+                `./images/${type}/${id}`;
+
+
+        const getIconBase =
+            name =>
+                `./images/icons/${name}`;
+
+
+        const getPostImageBase =
+            (talentId, id) =>
+                `./images/posts/${talentId}/${id}`;
+
+
+        function applyFallbacks(
+            root = document
+        ) {
+
+            root
+                .querySelectorAll(
+                    "img[data-base]"
+                )
+                .forEach(
+                    img =>
+                        setImageWithFallback(
+                            img,
+                            img.dataset.base
+                        )
+                );
+
+        }
+
+
+        async function downloadImageWithFallback(
+            base,
+            fileName = "image"
+        ) {
+
+            const candidates = imageCandidates(base);
+
+            for (const url of candidates) {
+
+                const image = new Image();
+
+                const loaded = await new Promise(
+                    resolve => {
+                        image.onload = () => resolve(true);
+                        image.onerror = () => resolve(false);
+                        image.src = url;
+                    }
+                );
+
+                if (loaded) {
+
+                    const ext = url.split(".").pop() || "jpeg";
+                    const link = document.createElement("a");
+
+                    link.href = url;
+                    link.download = `${fileName}.${ext}`;
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+
+                    return;
+                }
+            }
+
+            alert("ダウンロードする画像が見つかりませんでした。");
+        }
+
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                const button = event.target.closest(
+                    ".image-download-button"
+                );
+
+                if (!button) return;
+
+                event.preventDefault();
+
+                downloadImageWithFallback(
+                    button.dataset.imageBase,
+                    button.dataset.downloadName || "image"
+                );
+            }
+        );
+
+
+        function normalizeUrl(value) {
+
+            const url = String(value ?? "").trim();
+
+            const markdownMatch =
+                url.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+
+            return markdownMatch
+                ? markdownMatch[2]
+                : url;
+
+        }
+
+
+        function escapeHTML(value) {
+
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* =================================
+           COMING SOON
+        ================================= */
+
+        const staffComing = () => ({
+
+            type:
+                "staff",
+
+            name:
+                "Comingsoon",
+
+            category:
+                "NOAHX JAPAN STAFF",
+
+            imageId:
+                "Comingsoon",
+
+            tag:
+                "#STAFF",
+
+            description:
+                "NoahX Japan Staff",
+
+            detailRows: [
+
+                {
+                    label:
+                        "担当",
+
+                    value:
+                        "STAFF"
+                },
+
+                {
+                    label:
+                        "所属",
+
+                    value:
+                        "NoahX Japan"
+                },
+
+                {
+                    label:
+                        "自己紹介",
+
+                    value:
+                        "プロフィール情報は準備中です。"
+                }
+
+            ],
+
+            updatedAt:
+                "2026/08/24",
+
+            posts: [],
+
+            latestNews: [],
+
+            social: []
+
+        });
+
+
+        const cosComing = () => ({
+
+            type:
+                "cosplayer",
+
+            name:
+                "Comingsoon",
+
+            category:
+                "COSPLAYER / CREATOR",
+
+            imageId:
+                "Comingsoon",
+
+            tag:
+                "#コスプレイヤー",
+
+            description:
+                "Cosplayer / Creator",
+
+            detailRows: [
+
+                {
+                    label:
+                        "ジャンル",
+
+                    value:
+                        "コスプレイヤー / Creator"
+                },
+
+                {
+                    label:
+                        "自己紹介",
+
+                    value:
+                        "プロフィール情報は準備中です。"
+                }
+
+            ],
+
+            updatedAt:
+                "2026/08/24",
+
+            posts: [],
+
+            latestNews: [],
+
+            social: []
+
+        });
+
+
+        /* =================================
+           TALENT DATA
+        ================================= */
+
+        const talents = [
+
+            /* =============================
+               STAFF
+            ============================= */
+
+            {
+
+                type:
+                    "staff",
+
+                name:
+                    "のあ",
+
+                category:
+                    "VIDEO EDITOR / CREATOR",
+
+                imageId:
+                    "noa",
+
+                tag:
+                    "@noa0230",
+
+                description:
+                    "#動画編集者<br>「のあ」です。気軽に呼んでね。",
+
+                detailRows: [
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "動画編集を中心に活動しています。気軽に「のあ」と呼んでください。"
+                    },
+
+                    {
+                        label:
+                            "性別",
+
+                        value:
+                            "不詳"
+                    },
+
+                    {
+                        label:
+                            "年齢",
+
+                        value:
+                            "不詳（18歳以上）"
+                    },
+
+                    {
+                        label:
+                            "活動地域",
+
+                        value:
+                            "東京都付近"
+                    },
+
+                    {
+                        label:
+                            "担当",
+
+                        value:
+                            "VIDEO EDITOR / CREATOR"
+                    }
+
+                ],
+
+                updatedAt:
+                    "2026/08/24",
+
+                posts: [],
+
+                latestNews: [
+
+                    {
+                        date:
+                            "2026/08/24",
+
+                        title:
+                            "プロフィールページを更新しました",
+
+                        text:
+                            "個人プロフィールと最新情報を表示できる仕様に変更しました。"
+                    },
+
+                    {
+                        date:
+                            "2026/08/21",
+
+                        title:
+                            "SHOPページを更新しました",
+
+                        text:
+                            "NoahX Japan SHOPの機能・表示内容を調整しました。"
+                    }
+
+                ],
+
+                social: [
+
+                    {
+                        name:
+                            "X（旧Twitter）",
+
+                        url:
+                            "https://x.com/noa0230",
+
+                        icon:
+                            "x"
+                    },
+
+                    {
+                        name:
+                            "TikTok（本垢）",
+
+                        url:
+                            "https://www.tiktok.com/@noah._.0230",
+
+                        icon:
+                            "tiktok"
+                    },
+
+                    {
+                        name:
+                            "TikTok（サブ垢）",
+
+                        url:
+                            "https://www.tiktok.com/@noah._.0223",
+
+                        icon:
+                            "tiktok"
+                    },
+
+                    {
+                        name:
+                            "Instagram",
+
+                        url:
+                            "https://www.instagram.com/noa._.0230.9/",
+
+                        icon:
+                            "instagram"
+                    },
+
+                    {
+                        name:
+                            "YouTube",
+
+                        url:
+                            "https://youtube.com/@noa._.0230?si=RL4RzOa5CLUGBnN9",
+
+                        icon:
+                            "youtube"
+                    },
+
+                    {
+                        name:
+                            "メール",
+
+                        url:
+                            "mailto:profilenoah0620@gmail.com",
+
+                        icon:
+                            "mail"
+                    }
+
+                ]
+
+            },
+
+
+            staffComing(),
+
+            staffComing(),
+
+
+            /* =============================
+               COSPLAYER
+            ============================= */
+
+            {
+
+                type:
+                    "cosplayer",
+
+                name:
+                    "datenさん",
+
+                category:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                imageId:
+                    "daten",
+
+                postFolder:
+                    "daten",
+
+                tag:
+                    "#コスプレイヤー",
+
+                description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                detailRows: [
+
+                    {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "SNS ID",
+
+                        value:
+                            "@0__ayanami"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+
+                ],
+
+                updatedAt:
+                    "2026/08/24",
+
+                posts: [
+
+                    {
+                        date:
+                            "2026/07/27",
+
+                        imageId:
+                            "20260727-01",
+
+                        title:
+                            "2026年7月27日 投稿",
+
+                        text:
+                            "Xに投稿された写真です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2081317535321084290?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/28",
+
+                        imageId:
+                            "20260728-01",
+
+                        title:
+                            "2026年7月28日 投稿 01",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2074420734487892112?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/28",
+
+                        imageId:
+                            "20260728-02",
+
+                        title:
+                            "2026年7月28日 投稿 02",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2044405290003825039?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/30",
+
+                        imageId:
+                            "20260730-01",
+
+                        title:
+                            "2026年7月30日 投稿 01",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2035268242680476118?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/30",
+
+                        imageId:
+                            "20260730-02",
+
+                        title:
+                            "2026年7月30日 投稿 02",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2025857959734174159?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/30",
+
+                        imageId:
+                            "20260730-03",
+
+                        title:
+                            "2026年7月30日 投稿 03",
+
+                        text:
+                            "同日に複数投稿した写真の3件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2025466725467390132?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/30",
+
+                        imageId:
+                            "20260730-04",
+
+                        title:
+                            "2026年7月30日 投稿 04",
+
+                        text:
+                            "同日に複数投稿した写真の4件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2078401123183153645?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/30",
+
+                        imageId:
+                            "20260730-05",
+
+                        title:
+                            "2026年7月30日 投稿 05",
+
+                        text:
+                            "同日に複数投稿した写真の5件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1995797551640195294?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/07/30",
+
+                        imageId:
+                            "20260730-06",
+
+                        title:
+                            "2026年7月30日 投稿 06",
+
+                        text:
+                            "同日に複数投稿した写真の6件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1995431468961837370?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/08/02",
+
+                        imageId:
+                            "20260802-01",
+
+                        title:
+                            "2026年8月2日 投稿 01",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2053049785184313400?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/08/02",
+
+                        imageId:
+                            "20260802-02",
+
+                        title:
+                            "2026年8月2日 投稿 02",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/2058852040403820815?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/08/02",
+
+                        imageId:
+                            "20260802-02",
+
+                        title:
+                            "2026年8月2日 投稿 03",
+
+                        text:
+                            "同日に複数投稿した写真の3件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1959021134319689807?s=46"
+                    },
+
+                    {
+                        date:
+                            "2026/08/05",
+
+                        imageId:
+                            "20260805-01",
+
+                        title:
+                            "2026年8月5日 投稿 01",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1895662373467550021/photo/1"
+                    },
+
+                    {
+                        date:
+                            "2026/08/05",
+
+                        imageId:
+                            "20260805-02",
+
+                        title:
+                            "2026年8月5日 投稿 02",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1897175625296961830/photo/1"
+                    },
+
+                    {
+                        date:
+                            "2026/08/06",
+
+                        imageId:
+                            "20260806-01",
+
+                        title:
+                            "2026年8月6日 投稿 01",
+
+                        text:
+                            "Xにされた写真です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1896518435041153039/photo/1"
+                    },
+
+                    {
+                        date:
+                            "2026/08/08",
+
+                        imageId:
+                            "20260808-01",
+
+                        title:
+                            "2026年8月8日 投稿 01",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1896518435041153039/photo/1"
+                    },
+
+
+                    {
+                        date:
+                            "2026/08/08",
+
+                        imageId:
+                            "20260808-02",
+
+                        title:
+                            "2026年8月8日 投稿 02",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1859210067892953219/photo/1"
+                    },
+
+                    {
+                        date:
+                            "2026/08/08",
+
+                        imageId:
+                            "20260808-03",
+
+                        title:
+                            "2026年8月8日 投稿 03",
+
+                        text:
+                            "同日に複数投稿した写真の3件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1853929651745563112/photo/1"
+                    },
+
+                    {
+                        date:
+                            "2026/08/08",
+
+                        imageId:
+                            "20260808-04",
+
+                        title:
+                            "2026年8月8日 投稿 04",
+
+                        text:
+                            "同日に複数投稿した写真の4件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1963442846465417226/photo/1"
+                    },
+
+                    
+
+                    {
+                        date:
+                            "2026/08/10",
+
+                        imageId:
+                            "20260810-01",
+
+                        title:
+                            "2026年8月10日 投稿 01",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1898201488612372538/photo/1"
+                    },
+
+                    {
+                        date:
+                            "2026/08/10",
+
+                        imageId:
+                            "20260810-02",
+
+                        title:
+                            "2026年8月10日 投稿 02",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/0__ayanami/status/1902984733249900614/photo/1"
+                    },
+
+
+                ],
+
+                latestNews: [
+
+                    {
+                        date:
+                            "2026/08/24",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "投稿した写真をカレンダー形式で確認できるようになりました。"
+                    }
+
+                ],
+
+                social: [
+
+                    {
+                        name:
+                            "X（旧Twitter）",
+
+                        url:
+                            "https://x.com/0__ayanami",
+
+                        icon:
+                            "x"
+                    },
+
+                    {
+                        name:
+                            "TikTok",
+
+                        url:
+                            "https://www.tiktok.com/@daten122?_r=1&_t=ZS-98zM3Yd5yUB",
+
+                        icon:
+                            "tiktok"
+                    },
+
+                    {
+                        name:
+                            "Litlink",
+
+                        url:
+                            "https://lit.link/datenchan",
+
+                        icon:
+                            "litlink"
+                    }
+
+                ]
+
+            },
+
+
+            {
+
+                type:
+                    "cosplayer",
+
+                name:
+                    "月瀬めあさん",
+
+                category:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                imageId:
+                    "tsukisemea",
+
+                tag:
+                    "#コスプレイヤー",
+
+                description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                detailRows: [
+
+                    {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "SNS ID",
+
+                        value:
+                            "@tsukiseme4"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+
+                ],
+
+                updatedAt:
+                    "2026/08/25",
+
+                posts: [
+                    {
+                        date:
+                            "2026/08/01",
+
+                        imageId:
+                            "20260801-01",
+
+                        title:
+                            "2026年8月1日 投稿(HP削除日9/1)",
+
+                        text:
+                            "Xに投稿された写真です。",
+
+                        url:
+                            "https://x.com/tsukiseme4/status/2079841611442442401?s=46",
+
+                        publishEnd: "2026/08/31"
+                    },
+
+                    {
+                        date:
+                            "2026/08/02",
+
+                        imageId:
+                            "20260802-01",
+
+                        title:
+                            "2026年8月2日 投稿(HP削除日9/2)",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/tsukiseme4/status/2069708660176240640?s=46",
+
+                        publishEnd: "2026/09/01"
+                    },
+
+                    {
+                        date:
+                            "2026/08/02",
+
+                        imageId:
+                            "20260802-02",
+
+                        title:
+                            "2026年8月2日 投稿(HP削除日9/2)",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/tsukiseme4/status/2072261100406780268?s=46",
+
+                        publishEnd: "2026/09/01"
+                    },
+
+                    {
+                        date:
+                            "2026/08/02",
+
+                        imageId:
+                            "20260802-03",
+
+                        title:
+                            "2026年8月2日 投稿(HP削除日9/2)",
+
+                        text:
+                            "同日に複数投稿した写真の3件目です。",
+
+                        url:
+                            "https://x.com/tsukiseme4/status/2085654677031632976?s=46",
+
+                        publishEnd: "2026/09/01"
+                    },
+
+                    {
+                        date:
+                            "2026/08/03",
+
+                        imageId:
+                            "20260803-01",
+
+                        title:
+                            "2026年8月3日 投稿(HP削除日9/3)",
+
+                        text:
+                            "同日に複数投稿した写真の1件目です。",
+
+                        url:
+                            "https://x.com/tsukiseme4/status/2064996183953858734?s=46",
+
+                        publishEnd: "2026/09/02"
+                    },
+
+                    {
+                        date:
+                            "2026/08/03",
+
+                        imageId:
+                            "20260803-02",
+
+                        title:
+                            "2026年8月3日 投稿(HP削除日9/3)",
+
+                        text:
+                            "同日に複数投稿した写真の2件目です。",
+
+                        url:
+                            "https://x.com/tsukiseme4/status/2064996183953858734?s=46",
+                        
+                        publishEnd: "2026/09/02"
+                    },
+
+
+                ],
+
+                latestNews: [
+
+                    {
+                        date:
+                            "2026/08/24",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "SNSリンクおよび個人プロフィール情報を更新しました。"
+                    }
+
+                ],
+
+                social: [
+
+                    {
+                        name:
+                            "X（旧Twitter）",
+
+                        url:
+                            "https://x.com/tsukiseme4",
+
+                        icon:
+                            "x"
+                    },
+
+                    {
+                        name:
+                            "TikTok",
+
+                        url:
+                            "https://www.tiktok.com/@tsukiseme4",
+
+                        icon:
+                            "tiktok"
+                    },
+
+                    {
+                        name:
+                            "Litlink",
+
+                        url:
+                            "https://lit.link/tsukiseme4",
+
+                        icon:
+                            "litlink"
+                    }
+
+                ]
+
+            },
+
+
+            {
+
+                type:
+                    "cosplayer",
+
+                name:
+                    "とらさん",
+
+                category:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                imageId:
+                    "tora",
+
+                tag:
+                    "#コスプレイヤー",
+
+                description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                detailRows: [
+
+                    {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "SNS ID",
+
+                        value:
+                            "@_tora_cosplay"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+
+                ],
+
+                updatedAt:
+                    "2026/08/24",
+
+                posts: [
+                    {
+                        date:
+                            "現在準備中",
+
+                        imageId:
+                            "20260901-01",
+
+                        title:
+                            "現在準備中",
+
+                        text:
+                            "現在準備中。",
+
+                        url:
+                            ""
+                    },
+                ],
+
+                latestNews: [
+
+                    {
+                        date:
+                            "2026/08/24",
+
+                        title:
+                            "プロフィールを更新しました",
+
+                        text:
+                            "個人プロフィールとSNSリンクを更新しました。"
+                    }
+
+                ],
+
+                social: [
+
+                    {
+                        name:
+                            "X（旧Twitter）",
+
+                        url:
+                            "https://x.com/_tora_cosplay",
+
+                        icon:
+                            "x"
+                    },
+
+                    {
+                        name:
+                            "Instagram",
+
+                        url:
+                            "https://www.instagram.com/_tora_cosplay/",
+
+                        icon:
+                            "instagram"
+                    }
+
+                ]
+
+            },
+
+
+            {
+
+                type:
+                    "cosplayer",
+
+                name:
+                    "misa呆呆さん",
+
+                category:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                imageId:
+                    "misa",
+
+                postFolder:
+                    "misa",
+
+                tag:
+                    "#コスプレイヤー",
+
+                description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                detailRows: [
+
+                    {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+
+                ],
+
+                updatedAt:
+                    "2026/08/25",
+
+                posts: [
+                    {
+                        date:
+                            "2026/06/17",
+
+                        imageId:
+                            "20260617-01",
+
+                        title:
+                            "2026年６月17日　投稿　01",
+
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+
+                        url:
+                            "https://fantia.jp/posts/3976781"
+                    },
+
+                    {
+                        date:
+                            "2026/06/22",
+
+                        imageId:
+                            "20260622-01",
+
+                        title:
+                            "2026年６月22日　投稿　01",
+
+
+                        text:
+                            "fantiaに投稿された写真です。",
+                            
+
+                        url:
+                            "https://fantia.jp/posts/3401883"
+                    },
+
+                    {
+                        date:
+                            "2026/06/26",
+
+                        imageId:
+                            "20260626-01",
+
+                        title:
+                            "2026年６月26日　投稿　01",
+
+
+                        text:
+                            "fantiaに投稿された写真です。",
+                            
+
+                        url:
+                            "https://fantia.jp/posts/38579293"
+                    },
+
+                    {
+                        date:
+                            "2026/06/30",
+
+                        imageId:
+                            "20260630-01",
+
+                        title:
+                            "2026年６月30日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/4119839"
+                    },
+
+                    {
+                        date:
+                            "2026/07/01",
+
+                        imageId:
+                            "20260701-01",
+
+                        title:
+                            "2026年7月1日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/40747059"
+                    },
+
+                    {
+                        date:
+                            "2026/07/02",
+
+                        imageId:
+                            "20260702-01",
+
+                        title:
+                            "2026年7月2日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/4019808"
+                    },
+
+                    {
+                        date:
+                            "2026/07/02",
+
+                        imageId:
+                            "20260702-02",
+
+                        title:
+                            "2026年7月2日　投稿　02",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/4119839"
+                    },
+
+                    {
+                        date:
+                            "2026/07/03",
+
+                        imageId:
+                            "20260703-01",
+
+                        title:
+                            "2026年7月3日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3251209"
+                    },
+
+                    {
+                        date:
+                            "2026/07/04",
+
+                        imageId:
+                            "20260704-01",
+
+                        title:
+                            "2026年7月4日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3976781"
+                    },
+
+                    {
+                        date:
+                            "2026/07/05",
+
+                        imageId:
+                            "20260705-01",
+
+                        title:
+                            "2026年7月5日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3769178"
+                    },
+
+                    {
+                        date:
+                            "2026/07/06",
+
+                        imageId:
+                            "20260706-01",
+
+                        title:
+                            "2026年7月6日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3463575"
+                    },
+
+                    {
+                        date:
+                            "2026/07/06",
+
+                        imageId:
+                            "20260706-02",
+
+                        title:
+                            "2026年7月6日　投稿　02",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3297399"
+                    },
+
+                    {
+                        date:
+                            "2026/07/06",
+
+                        imageId:
+                            "20260706-03",
+
+                        title:
+                            "2026年7月6日　投稿　03",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/4119839"
+                    },
+
+                    {
+                        date:
+                            "2026/07/07",
+
+                        imageId:
+                            "20260707-01",
+
+                        title:
+                            "2026年7月7日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/4080103"
+                    },
+
+                    {
+                        date:
+                            "2026/07/07",
+
+                        imageId:
+                            "20260707-02",
+
+                        title:
+                            "2026年7月7日　投稿　02",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3776263"
+                    },
+
+                    {
+                        date:
+                            "2026/07/09",
+
+                        imageId:
+                            "20260709-01",
+
+                        title:
+                            "2026年7月9日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3516217"
+                    },
+
+                    {
+                        date:
+                            "2026/07/11",
+
+                        imageId:
+                            "20260711-01",
+
+                        title:
+                            "2026年7月11日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/699996"
+                    },
+
+                    {
+                        date:
+                            "2026/07/11",
+
+                        imageId:
+                            "20260711-02",
+
+                        title:
+                            "2026年7月11日　投稿　02",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3976781"
+                    },
+
+                    {
+                        date:
+                            "2026/07/11",
+
+                        imageId:
+                            "20260711-03",
+
+                        title:
+                            "2026年7月11日　投稿　03",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3617450"
+                    },
+
+                     {
+                        date:
+                            "2026/07/11",
+
+                        imageId:
+                            "20260711-04",
+
+                        title:
+                            "2026年7月11日　投稿　04",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3570456"
+                    },
+
+                     {
+                        date:
+                            "2026/07/13",
+
+                        imageId:
+                            "20260713-01",
+
+                        title:
+                            "2026年7月13日 投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/4080103"
+                    },
+
+                    {
+                        date:
+                            "2026/07/14",
+
+                        imageId:
+                            "20260714-01",
+
+                        title:
+                            "2026年7月14日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3251209"
+                    },
+
+                    {
+                        date:
+                            "2026/07/14",
+
+                        imageId:
+                            "20260714-02",
+
+                        title:
+                            "2026年7月14日　投稿　02",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3970296"
+                    },
+
+                    {
+                        date:
+                            "2026/07/15",
+
+                        imageId:
+                            "20260715-01",
+
+                        title:
+                            "2026年7月15日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3237277"
+                    },
+
+                    {
+                        date:
+                            "2026/07/16",
+
+                        imageId:
+                            "20260716-01",
+
+                        title:
+                            "2026年7月16日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3877366"
+                    },
+
+                     {
+                        date:
+                            "2026/07/16",
+
+                        imageId:
+                            "20260716-02",
+
+                        title:
+                            "2026年7月16日　投稿　02",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3877366"
+                    },
+
+                    {
+                        date:
+                            "2026/07/16",
+
+                        imageId:
+                            "20260716-03",
+
+                        title:
+                            "2026年7月16日　投稿　03",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3877366"
+                    },
+
+                    {
+                        date:
+                            "2026/07/18",
+
+                        imageId:
+                            "20260718-01",
+
+                        title:
+                            "2026年7月18日　投稿　01",
+
+                        text:
+                            "fantiaに投稿された写真です。",
+
+                        url:
+                            "https://fantia.jp/posts/3559441"
+                    },
+
+                ],
+
+                latestNews: [
+                    {
+                        date:
+                            "2026/08/24",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "SNSリンクおよび個人プロフィール情報を更新しました。"
+                    }
+                ],
+
+                social: [
+                    {
+                        name:
+                            "X（旧Twitter）",
+
+                        url:
+                            "https://twitter.com/misao_28",
+
+                        icon:
+                            "x"
+                    },
+
+                    {
+                        name:
+                            "fantia",
+
+                        url:
+                            "https://fantia.jp/misadaidai",
+
+                        icon:
+                            "fantia"
+                    }
+                ]
+
+
+            },
+
+
+            {
+
+                type:
+                    "cosplayer",
+
+                name:
+                    "Ssnappyさん",
+
+                category:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                imageId:
+                    "ssnappy",
+
+                postFolder:
+                    "ssnappy",
+
+                tag:
+                    "#コスプレイヤー",
+
+                description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                detailRows: [
+
+                    {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+
+                ],
+
+                updatedAt:
+                    "2026/08/24",
+
+                posts: [
+                    {
+                        date:
+                            "2026/07/01",
+
+                        imageId:
+                            "20260701-01",
+
+                        title:
+                            "2026/07/01 投稿",
+
+                        text:
+                            "gankに投稿された写真です。",
+
+                        url:
+                            "https://ganknow.com/services/95979-ssnappy-firefly-seifuku"
+                    },
+
+                    {
+                        date:
+                            "2026/07/02",
+
+                        imageId:
+                            "20260702-01",
+
+                        title:
+                            "2026/07/02 投稿",
+
+                        text:
+                            "gankに投稿された写真です。",
+
+                        url:
+                            "https://ganknow.com/services/95979-ssnappy-firefly-seifuku"
+                    },
+
+                    {
+                        date:
+                            "2026/07/04",
+
+                        imageId:
+                            "20260704-01",
+
+                        title:
+                            "2026/07/04 投稿",
+
+                        text:
+                            "gankに投稿された写真です。",
+
+                        url:
+                            "https://ganknow.com/services/95979-ssnappy-firefly-seifuku"
+                    },
+                ],
+
+                latestNews: [
+                    {
+                        date:
+                            "2026/08/24",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "SNSリンクおよび個人プロフィール情報を更新しました。"
+                    }
+                ],
+
+                social: [
+                    {
+                        name:
+                            "X（旧Twitter）",
+
+                        url:
+                            "https://twitter.com/GCcorpo",
+
+                        icon:
+                            "x"
+                    },
+
+                    {
+                        name:
+                            "TikTok",
+
+                        url:
+                            "https://www.tiktok.com/@ssnappy1",
+
+                        icon:
+                            "tiktok"
+                    },
+
+                    {
+                        name:
+                            "gank",
+
+                        url:
+                            "https://ganknow.com/ssnappy",
+
+                        icon:
+                            "gank"
+                    }
+                ]
+
+            },
+
+
+            {
+
+                type:
+                    "cosplayer",
+
+                name:
+                    "연색さん",
+
+                category:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                imageId:
+                    "yeonsaek",
+
+                postFolder:
+                    "yeonsaek",
+
+                tag:
+                    "#コスプレイヤー",
+
+                description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                detailRows: [
+
+                    {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+
+                ],
+
+                updatedAt:
+                    "2026/08/24",
+
+                posts: [
+                    {
+                        date:
+                            "2026/08/05",
+
+                        imageId:
+                            "20260805-01",
+
+                        title:
+                            "2026年8月5日 投稿",
+
+                        text:
+                            "Tiktokに投稿された写真です。",
+
+                        url:
+                            "https://vt.tiktok.com/ZSVQAwDC9/"
+                    },
+                ],
+
+                latestNews: [
+                    {
+                        date:
+                            "2026/08/24",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "SNSリンクおよび個人プロフィール情報を更新しました。"
+                    }
+                ],
+
+                social: [
+                    {
+                        name:
+                            "TikTok",
+
+                        url:
+                            "https://www.tiktok.com/@yexns2",
+
+                        icon:
+                            "tiktok"
+                    },
+
+                    
+                ]
+
+            },
+
+
+            {
+
+                  type: "cosplayer",
+
+                  name: "iruriさん",
+
+                  category: "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                  imageId: "iruri",
+
+                  downloadMode: true,
+
+                  tag: "#コスプレイヤー",
+
+                  description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                  detailRows: [
+                {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+                ],
+
+                  latestNews: [
+                    {
+                        date:
+                            "2026/08/25",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "SNSリンクおよび個人プロフィール情報を更新しました。"
+                    }
+                ],
+
+                  social: [
+                    {
+                        name:
+                            "X（旧Twitter)",
+
+                        url:
+                            "https://twitter.com/DeathBleak",
+
+                        icon:
+                            "x"},
+
+
+                       {
+                        name:
+                            "instagram",
+
+                        url:
+                            "https://www.instagram.com/yuiyui8754/",
+                        icon:
+                            "instagram"
+                    }
+                ],
+          
+                posts: [
+                    {
+                        date:
+                            "2026/09/01",
+
+                        imageId:
+                            "20260805-01",
+
+                        title:
+                            "2026年8月5日 投稿",
+
+                        text:
+                            "Tiktokに投稿された写真です。",
+
+                        url:
+                            "https://vt.tiktok.com/ZSVQAwDC9/"
+                    }           
+          
+                ]
+            },
+
+            {
+
+                  type: "cosplayer",
+
+                  name: "澪喵子さん",
+
+                  category: "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                  imageId: "zenzui",
+
+                  downloadMode:
+                          true,
+
+                  tag: "#コスプレイヤー",
+
+                  description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                  detailRows: [
+                {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。"
+                    }
+                ],
+
+                  latestNews: [
+                    {
+                        date:
+                            "2026/08/25",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "SNSリンクおよび個人プロフィール情報を更新しました。"
+                    }
+                ],
+
+                  social: [
+                    {
+                        name:
+                            "TikTok",
+
+                        url:
+                            "https://www.tiktok.com/@zenzui26",
+
+                        icon:
+                            "tiktok"},
+                ],
+          
+                posts: [
+                    {
+                        date:
+                            "2026/08/04",
+
+                        imageId:
+                            "20260804-01",
+
+                        title:
+                            "2026年8月4日 投稿01",
+
+                        text:
+                            "個人で頂いた写真です。",
+
+                    },
+
+                    {
+                        date:
+                            "2026/08/04",
+
+                        imageId:
+                            "20260804-02",
+
+                        title:
+                            "2026年8月4日 投稿02",
+
+                        text:
+                            "個人で頂いた写真です。",
+
+                    }              
+          
+                ]
+            },
+
+            {
+
+                  type: "cosplayer",
+
+                  name: "AiMYさん",
+
+                  category: "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                  imageId: "aimy",
+
+                  tag: "#コスプレイヤー",
+
+                  description:
+                    "Cosplayer / Creator<br>各種SNSはこちらから",
+
+                  detailRows: [
+                {
+                        label:
+                            "ジャンル",
+
+                        value:
+                            "コスプレイヤー / Creator"
+                    },
+
+                    {
+                        label:
+                            "自己紹介",
+
+                        value:
+                            "主にコスプレ活動されています。",
+                    }
+                ],
+
+                  latestNews: [
+                    {
+                        date:
+                            "2026/08/25",
+
+                        title:
+                            "プロフィール情報更新",
+
+                        text:
+                            "SNSリンクおよび個人プロフィール情報を更新しました。"
+                    }
+                ],
+
+                  social: [
+                    {
+                        name:
+                            "TikTok",
+
+                        url:
+                            "https://www.tiktok.com/@aimy.93",
+
+                        icon:
+                            "tiktok"},
+
+                            {
+                        name:
+                            "instagram",
+
+                        url:
+                            "https://www.instagram.com/aimy___93",
+
+                        icon:
+                            "instagram"},
+                ],
+          
+                posts: [
+                    {
+                        date:
+                            "2026/09/04",
+
+                        imageId:
+                            "20260804-01",
+
+                        title:
+                            "2026年8月4日 投稿01",
+
+                        text:
+                            "個人で頂いた写真です。",
+
+                    },
+
+                                 
+          
+                ]
+            },
+
+
+            ...Array.from(
+                {
+                    length:0
+                },
+                cosComing
+            )
+
+        ];
+
+
+        /* =================================
+           CURRENT PROFILE
+        ================================= */
+
+        let currentTalent =
+            null;
+
+
+        let currentTalentIndex =
+            null;
+
+
+        let currentCalendarMonths =
+            [];
+
+
+        let currentCalendarIndex =
+            0;
+
+
+        let currentCalendarCounts =
+            {};
+
+
+        let selectedPostDate =
+            null;
+
+
+        /* =================================
+           MEMBER CARD
+        ================================= */
+
+        function createMemberCard(
+            member,
+            index
+        ) {
+
+            return `
+                <div
+                    class="talent-card"
+                    onclick="showTalentProfile(${index})"
+                >
+
+                    <img
+                        class="talent-photo"
+                        data-base="${escapeHTML(
+                            getImageBase(
+                                member.type,
+                                member.imageId
+                            )
+                        )}"
+                        alt="${escapeHTML(member.name)}"
+                    >
+
+                    <div class="talent-info">
+
+                        <div class="talent-name">
+                            ${escapeHTML(member.name)}
+                        </div>
+
+                        <div class="talent-category">
+                            ${member.category || ""}
+                        </div>
+
+                        <button
+                            type="button"
+                            class="profile-button"
+                        >
+                            PROFILE →
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+
+        }
+
+
+        function createTalentCards() {
+
+            staffList.innerHTML =
+                "";
+
+            talentList.innerHTML =
+                "";
+
+
+            talents.forEach(
+                (member, index) => {
+
+                    const card =
+                        createMemberCard(
+                            member,
+                            index
+                        );
+
+
+                    if (
+                        member.type === "staff"
+                    ) {
+
+                        staffList.insertAdjacentHTML(
+                            "beforeend",
+                            card
+                        );
+
+                    } else {
+
+                        talentList.insertAdjacentHTML(
+                            "beforeend",
+                            card
+                        );
+
+                    }
+
+                }
+            );
+
+
+            applyFallbacks();
+
+        }
+
+
+        /* =================================
+           DATE HELPER
+        ================================= */
+
+        function parsePostDate(dateString) {
+
+            const parts =
+                String(dateString)
+                    .split("/");
+
+
+            if (parts.length !== 3) {
+
+                return null;
+
+            }
+
+
+            return new Date(
+                Number(parts[0]),
+                Number(parts[1]) - 1,
+                Number(parts[2]),
+                0,
+                0,
+                0
+            );
+
+        }
+
+
+
+        /* =================================
+           PUBLISH PERIOD
+        ================================= */
+        function getToday() {
+            const now = new Date();
+            return new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate(),
+                0, 0, 0
+            );
+        }
+
+        function isPostPublished(post) {
+            if (!post || !post.date) return false;
+
+            const start = parsePostDate(post.date);
+            if (!start) return false;
+
+            const today = getToday();
+
+            if (start > today) return false;
+
+            if (!post.publishEnd) return true;
+
+            const end = parsePostDate(post.publishEnd);
+            if (!end) return true;
+
+            return today <= end;
+        }
+
+        function getPublishedPosts(talent) {
+            return (talent.posts || []).filter(isPostPublished);
+        }
+
+        function getPostCountByDate(posts) {
+
+            return posts.reduce(
+                (result, post) => {
+
+                    if (post.date) {
+
+                        result[post.date] =
+                            (result[post.date] || 0) + 1;
+
+                    }
+
+                    return result;
+
+                },
+                {}
+            );
+
+        }
+
+
+        /* =================================
+           CALENDAR
+        ================================= */
+
+        function createCalendar(
+            year,
+            month,
+            counts
+        ) {
+
+            const firstDay =
+                new Date(
+                    year,
+                    month - 1,
+                    1
+                ).getDay();
+
+
+            const lastDay =
+                new Date(
+                    year,
+                    month,
+                    0
+                ).getDate();
+
+
+            let html = `
+
+                <div class="calendar-card">
+
+                    <div class="calendar-switcher">
+
+                        <button
+                            type="button"
+                            class="calendar-switch-button"
+                            onclick="changeCalendarMonth(-1)"
+                            ${currentCalendarIndex === 0
+                                ? "disabled"
+                                : ""}
+                        >
+                            ←
+                        </button>
+
+                        <div class="calendar-current-month">
+                            ${year}年${month}月
+                        </div>
+
+                        <button
+                            type="button"
+                            class="calendar-switch-button"
+                            onclick="changeCalendarMonth(1)"
+                            ${currentCalendarIndex === currentCalendarMonths.length - 1
+                                ? "disabled"
+                                : ""}
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+
+                    <div class="calendar-week">
+
+                        <div>日</div>
+                        <div>月</div>
+                        <div>火</div>
+                        <div>水</div>
+                        <div>木</div>
+                        <div>金</div>
+                        <div>土</div>
+
+                    </div>
+
+
+                    <div class="calendar-grid">
+
+                        ${
+                            '<div class="calendar-day empty"></div>'
+                                .repeat(firstDay)
+                        }
+
+            `;
+
+
+            for (
+                let day = 1;
+                day <= lastDay;
+                day++
+            ) {
+
+                const date =
+                    `${year}/${String(month).padStart(2, "0")}/${String(day).padStart(2, "0")}`;
+
+
+                const count =
+                    counts[date] || 0;
+
+
+                if (count > 0) {
+
+                    html += `
+
+                        <button
+                            type="button"
+                            class="calendar-day has-post"
+                            onclick="filterPostsByDate('${date}')"
+                            aria-label="${date}の投稿を見る"
+                        >
+
+                            ${day}
+
+                            <span class="calendar-post-count">
+                                ${count}
+                            </span>
+
+                        </button>
+
+                    `;
+
+                } else {
+
+                    html += `
+
+                        <div class="calendar-day">
+                            ${day}
+                        </div>
+
+                    `;
+
+                }
+
+            }
+
+
+            html += `
+                    </div>
+
+                </div>
+            `;
+
+
+            return html;
+
+        }
+
+
+        function renderPostCalendar(talent) {
+
+            const posts =
+                getPublishedPosts(talent);
+
+
+            if (!posts.length) {
+
+                talentPostCalendar.innerHTML = `
+                    <div class="empty-message">
+                        現在、掲載できる投稿はありません。
+                    </div>
+                `;
+
+                return;
+
+            }
+
+
+            currentCalendarMonths =
+                [
+                    ...new Set(
+                        posts
+                            .map(
+                                post =>
+                                    post.date
+                                        ?.match(
+                                            /^(\d{4})\/(\d{2})/
+                                        )
+                            )
+                            .filter(Boolean)
+                            .map(
+                                match =>
+                                    `${match[1]}-${match[2]}`
+                            )
+                    )
+                ]
+                .sort();
+
+
+            currentCalendarCounts =
+                getPostCountByDate(posts);
+
+
+            currentCalendarIndex =
+                currentCalendarMonths.length - 1;
+
+
+            renderCurrentCalendar();
+
+        }
+
+
+        function renderCurrentCalendar() {
+
+            if (
+                !currentCalendarMonths.length
+            ) {
+                return;
+            }
+
+
+            const [
+                year,
+                month
+            ] =
+                currentCalendarMonths[
+                    currentCalendarIndex
+                ]
+                    .split("-")
+                    .map(Number);
+
+
+            talentPostCalendar.innerHTML =
+                createCalendar(
+                    year,
+                    month,
+                    currentCalendarCounts
+                );
+
+        }
+
+
+        function changeCalendarMonth(direction) {
+
+            const next =
+                currentCalendarIndex +
+                direction;
+
+
+            if (
+                next < 0 ||
+                next >= currentCalendarMonths.length
+            ) {
+                return;
+            }
+
+
+            currentCalendarIndex =
+                next;
+
+
+            renderCurrentCalendar();
+
+        }
+
+
+        /* =================================
+           POST FILTER
+        ================================= */
+
+        function filterPostsByDate(date) {
+
+            if (!currentTalent) {
+                return;
+            }
+
+
+            selectedPostDate =
+                date;
+
+
+            renderPostArchive(
+                currentTalent,
+                selectedPostDate
+            );
+
+
+            setTimeout(
+                () => {
+
+                    postFilterBar.scrollIntoView(
+                        {
+                            behavior: "smooth",
+                            block: "start"
+                        }
+                    );
+
+                },
+                50
+            );
+
+        }
+
+
+        function showAllPosts() {
+
+            if (!currentTalent) {
+                return;
+            }
+
+
+            selectedPostDate =
+                null;
+
+
+            renderPostArchive(
+                currentTalent
+            );
+
+        }
+
+
+        /* =================================
+           POST ARCHIVE
+        ================================= */
+
+        function renderPostArchive(
+            talent,
+            filterDate = null
+        ) {
+
+            const allPosts =
+                getPublishedPosts(talent);
+
+
+            const posts =
+                filterDate
+                    ? allPosts.filter(
+                        post =>
+                            post.date === filterDate
+                    )
+                    : allPosts;
+
+
+            if (!allPosts.length) {
+
+                postFilterBar.innerHTML =
+                    "";
+
+                talentPostList.innerHTML = `
+                    <div class="empty-message">
+                        現在、掲載できる投稿はありません。
+                    </div>
+                `;
+
+                return;
+
+            }
+
+
+            if (filterDate) {
+
+                postFilterBar.innerHTML = `
+
+                    <div class="post-filter-bar">
+
+                        <div>
+                            ${escapeHTML(filterDate)} の投稿を表示中
+                        </div>
+
+                        <button
+                            type="button"
+                            class="show-all-posts"
+                            onclick="showAllPosts()"
+                        >
+                            ← すべての投稿を表示
+                        </button>
+
+                    </div>
+
+                `;
+
+            } else {
+
+                postFilterBar.innerHTML =
+                    "";
+
+            }
+
+
+            const grouped =
+                {};
+
+
+            posts.forEach(
+                post => {
+
+                    (
+                        grouped[post.date] ??= []
+                    ).push(post);
+
+                }
+            );
+
+
+            talentPostList.innerHTML =
+                Object.keys(grouped)
+                    .sort(
+                        (a, b) =>
+                            b.localeCompare(a)
+                    )
+                    .map(
+                        date => `
+
+                            <section class="post-date-group">
+
+                                <h2 class="post-date-heading">
+
+                                    ${escapeHTML(date)}
+
+                                    <span
+                                        style="
+                                            font-size:10px;
+                                            opacity:.8;
+                                        "
+                                    >
+                                        ${grouped[date].length}件の投稿
+                                    </span>
+
+                                </h2>
+
+
+                                <div class="post-grid">
+
+                                    ${grouped[date]
+                                        .map(
+                                            (post, index) => `
+
+                                                <article class="post-card">
+
+                                                    <img
+                                                        class="post-image"
+                                                        data-base="${escapeHTML(
+                                                            getPostImageBase(
+                                                                talent.postFolder ||
+                                                                talent.imageId,
+                                                                post.imageId
+                                                            )
+                                                        )}"
+                                                        alt="${escapeHTML(
+                                                            post.title ||
+                                                            talent.name
+                                                        )}"
+                                                    >
+
+
+                                                    <div class="post-content">
+
+                                                        <div class="post-number">
+
+                                                            POST ${String(
+                                                                index + 1
+                                                            ).padStart(
+                                                                2,
+                                                                "0"
+                                                            )}
+
+                                                        </div>
+
+
+                                                        <div class="post-title">
+
+                                                            ${escapeHTML(
+                                                                post.title ||
+                                                                "投稿"
+                                                            )}
+
+                                                        </div>
+
+
+                                                        <div class="post-text">
+
+                                                            ${escapeHTML(
+                                                                post.text ||
+                                                                ""
+                                                            )}
+
+                                                        </div>
+
+
+                                                        ${
+                                                            talent.downloadMode
+                                                                ? `
+                                                                    <a
+                                                                        class="post-jump-button image-download-button"
+                                                                        href="#"
+                                                                        data-image-base="${escapeHTML(
+                                                                            getPostImageBase(
+                                                                                talent.postFolder || talent.imageId,
+                                                                                post.imageId
+                                                                            )
+                                                                        )}"
+                                                                        data-download-name="${escapeHTML(post.imageId || "image")}" 
+                                                                    >
+                                                                        画像ダウンロード →
+                                                                    </a>
+                                                                `
+                                                                : post.url
+                                                                    ? `
+                                                                        <a
+                                                                            class="post-jump-button"
+                                                                            href="${escapeHTML(normalizeUrl(post.url))}"
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                        >
+                                                                            投稿を見る →
+                                                                        </a>
+                                                                    `
+                                                                    : `
+                                                                        <div class="link-disabled">
+                                                                            リンク準備中
+                                                                        </div>
+                                                                    `
+                                                        }
+
+                                                    </div>
+
+                                                </article>
+
+                                            `
+                                        )
+                                        .join("")}
+
+                                </div>
+
+                            </section>
+
+                        `
+                    )
+                    .join("");
+
+
+            applyFallbacks(
+                talentPostList
+            );
+
+        }
+
+
+        /* =================================
+           LATEST POSTS
+           PAST 7 DAYS
+           NO IMAGE
+        ================================= */
+
+        function renderLatestPosts() {
+
+            const allPosts =
+                [];
+
+
+            talents.forEach(
+                (talent, talentIndex) => {
+
+                    (
+                        talent.posts || []
+                    )
+                        .forEach(
+                            post => {
+
+                                if (!isPostPublished(post)) {
+                                    return;
+                                }
+
+                                const postDate =
+                                    parsePostDate(
+                                        post.date
+                                    );
+
+
+                                if (!postDate) {
+                                    return;
+                                }
+
+
+                                const now =
+                                    new Date();
+
+
+                                now.setHours(
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                );
+
+
+                                const sevenDaysAgo =
+                                    new Date(now);
+
+
+                                sevenDaysAgo.setDate(
+                                    now.getDate() - 7
+                                );
+
+
+                                if (
+                                    postDate >= sevenDaysAgo &&
+                                    postDate <= now
+                                ) {
+
+                                    allPosts.push(
+                                        {
+                                            ...post,
+                                            talent,
+                                            talentIndex
+                                        }
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                }
+            );
+
+
+            allPosts.sort(
+                (a, b) =>
+                    b.date.localeCompare(
+                        a.date
+                    )
+            );
+
+
+            if (!allPosts.length) {
+
+                latestPostList.innerHTML = `
+
+                    <div class="empty-message">
+
+                        現在、過去7日以内の最新投稿はありません。
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            latestPostList.innerHTML =
+                allPosts
+                    .map(
+                        post => `
+
+                            <article class="latest-item">
+
+                                <div class="latest-date">
+
+                                    ${escapeHTML(
+                                        post.date
+                                    )}
+
+                                </div>
+
+
+                                <div class="latest-title">
+
+                                    ${escapeHTML(
+                                        post.talent.name
+                                    )}
+
+                                </div>
+
+
+                                <div class="latest-text">
+
+                                    ${escapeHTML(
+                                        post.title ||
+                                        "新しい投稿が追加されました。"
+                                    )}
+
+                                    <br>
+
+                                    ${escapeHTML(
+                                        post.text ||
+                                        ""
+                                    )}
+
+                                </div>
+
+
+                                <button
+                                    type="button"
+                                    class="latest-profile-button"
+                                    onclick="openLatestPost(
+                                        ${post.talentIndex},
+                                        '${post.date}'
+                                    )"
+                                >
+                                    投稿を見る →
+                                </button>
+
+                            </article>
+
+                        `
+                    )
+                    .join("");
+
+        }
+
+
+        function openLatestPost(
+            talentIndex,
+            date
+        ) {
+
+            showTalentProfile(
+                talentIndex
+            );
+
+
+            setTimeout(
+                () => {
+
+                    filterPostsByDate(
+                        date
+                    );
+
+                },
+                150
+            );
+
+        }
+
+
+        /* =================================
+           SHOW PROFILE
+        ================================= */
+
+        function showTalentProfile(index) {
+
+            const talent =
+                talents[index];
+
+
+            currentTalent =
+                talent;
+
+
+            currentTalentIndex =
+                index;
+
+
+            selectedPostDate =
+                null;
+
+
+            window.lastMemberType =
+                talent.type;
+
+
+            mainPage.classList.add(
+                "hidden"
+            );
+
+
+            talentProfilePage.classList.remove(
+                "hidden"
+            );
+
+
+            setImageWithFallback(
+                talentIcon,
+                getImageBase(
+                    talent.type,
+                    talent.imageId
+                )
+            );
+
+
+            setImageWithFallback(
+                talentMainImage,
+                getImageBase(
+                    talent.type,
+                    talent.imageId
+                )
+            );
+
+
+            talentIcon.alt =
+                talent.name;
+
+
+            talentMainImage.alt =
+                talent.name;
+
+
+            talentProfileName.textContent =
+                talent.name;
+
+
+            talentTag.textContent =
+                talent.tag || "";
+
+
+            talentDescription.innerHTML =
+                talent.description || "";
+
+
+            talentDetailTitle.textContent =
+                `${talent.name}のプロフィール`;
+
+
+            talentDetailName.textContent =
+                talent.name;
+
+
+            talentDetailRows.innerHTML =
+                (talent.detailRows || [])
+                    .map(
+                        row => `
+
+                            <div class="profile-row">
+
+                                <div class="profile-label">
+
+                                    ${escapeHTML(
+                                        row.label
+                                    )}
+
+                                </div>
+
+
+                                <div class="profile-value">
+
+                                    ${escapeHTML(
+                                        row.value
+                                    )}
+
+                                </div>
+
+                            </div>
+
+                        `
+                    )
+                    .join("");
+
+
+            talentUpdatedAt.textContent =
+                talent.updatedAt
+                    ? `最終更新日： ${talent.updatedAt}`
+                    : "";
+
+
+            const social =
+                talent.social || [];
+
+
+            talentSocial.innerHTML =
+                social
+                    .map(
+                        item => `
+
+                            <a
+                                href="${escapeHTML(normalizeUrl(item.url))}"
+                                ${
+                                    normalizeUrl(item.url).startsWith("mailto:")
+                                        ? ""
+                                        : 'target="_blank" rel="noopener noreferrer"'
+                                }
+                                aria-label="${escapeHTML(item.name)}"
+                            >
+
+                                <img
+                                    data-base="${escapeHTML(
+                                        getIconBase(
+                                            item.icon
+                                        )
+                                    )}"
+                                    alt="${escapeHTML(
+                                        item.name
+                                    )}"
+                                >
+
+                            </a>
+
+                        `
+                    )
+                    .join("");
+
+
+            talentLinks.innerHTML =
+                social.length
+                    ? social
+                        .map(
+                            item => `
+
+                                <a
+                                    href="${escapeHTML(normalizeUrl(item.url))}"
+                                    ${
+                                        normalizeUrl(item.url).startsWith("mailto:")
+                                            ? ""
+                                            : 'target="_blank" rel="noopener noreferrer"'
+                                    }
+                                    class="link"
+                                >
+
+                                    <span class="link-icon">
+
+                                        <img
+                                            data-base="${escapeHTML(
+                                                getIconBase(
+                                                    item.icon
+                                                )
+                                            )}"
+                                            alt="${escapeHTML(
+                                                item.name
+                                            )}"
+                                        >
+
+                                    </span>
+
+                                    ${escapeHTML(talent.name)}の${escapeHTML(item.name)}
+
+                                </a>
+
+                            `
+                        )
+                        .join("")
+                    : `
+                        <div class="link-disabled">
+                            現在、公開中のSNSリンクはありません
+                        </div>
+                    `;
+
+
+            applyFallbacks(
+                talentSocial
+            );
+
+
+            applyFallbacks(
+                talentLinks
+            );
+
+
+            renderPostCalendar(
+                talent
+            );
+
+
+            renderPostArchive(
+                talent
+            );
+
+
+            const news =
+                talent.latestNews || [];
+
+
+            talentLatestNews.innerHTML =
+                news.length
+                    ? news
+                        .map(
+                            item => `
+
+                                <article class="latest-item">
+
+                                    <div class="latest-date">
+
+                                        ${escapeHTML(
+                                            item.date
+                                        )}
+
+                                    </div>
+
+
+                                    <div class="latest-title">
+
+                                        ${escapeHTML(
+                                            item.title
+                                        )}
+
+                                    </div>
+
+
+                                    <div class="latest-text">
+
+                                        ${escapeHTML(
+                                            item.text
+                                        )}
+
+                                    </div>
+
+                                </article>
+
+                            `
+                        )
+                        .join("")
+                    : `
+                        <div class="empty-message">
+                            現在、掲載できる最新情報はありません。
+                        </div>
+                    `;
+
+
+            window.scrollTo(
+                {
+                    top: 0,
+                    behavior: "auto"
+                }
+            );
+
+        }
+
+
+        /* =================================
+           BACK TO LIST
+        ================================= */
+
+        function showTalentList() {
+
+            selectedPostDate =
+                null;
+
+
+            talentProfilePage.classList.add(
+                "hidden"
+            );
+
+
+            mainPage.classList.remove(
+                "hidden"
+            );
+
+
+            const target =
+                window.lastMemberType === "staff"
+                    ? "staff"
+                    : "cosplayer";
+
+
+            setTimeout(
+                () => {
+
+                    $(target)
+                        ?.scrollIntoView(
+                            {
+                                behavior: "auto"
+                            }
+                        );
+
+                },
+                0
+            );
+
+        }
+
+
+        /* =================================
+           MENU
+        ================================= */
+
+        function toggleMenu() {
+
+            menu.classList.toggle(
+                "open"
+            );
+
+
+            menuButton.classList.toggle(
+                "active"
+            );
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    !menu.contains(event.target) &&
+                    !menuButton.contains(event.target)
+                ) {
+
+                    menu.classList.remove(
+                        "open"
+                    );
+
+
+                    menuButton.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =================================
+           NAVIGATION
+        ================================= */
+
+        document
+            .querySelectorAll(
+                "nav a"
+            )
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        "click",
+                        event => {
+
+                            menu.classList.remove(
+                                "open"
+                            );
+
+
+                            menuButton.classList.remove(
+                                "active"
+                            );
+
+
+                            const href =
+                                link.getAttribute(
+                                    "href"
+                                );
+
+
+                            if (
+                                href?.startsWith("#")
+                            ) {
+
+                                event.preventDefault();
+
+
+                                talentProfilePage
+                                    .classList
+                                    .add(
+                                        "hidden"
+                                    );
+
+
+                                mainPage
+                                    .classList
+                                    .remove(
+                                        "hidden"
+                                    );
+
+
+                                setTimeout(
+                                    () => {
+
+                                        document
+                                            .querySelector(
+                                                href
+                                            )
+                                            ?.scrollIntoView(
+                                                {
+                                                    behavior:
+                                                        "smooth"
+                                                }
+                                            );
+
+                                    },
+                                    0
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* =================================
+           INITIALIZE
+        ================================= */
+
+        createTalentCards();
+
+        renderLatestPosts();
+
+    </script>
+
+</body>
+
+</html>
